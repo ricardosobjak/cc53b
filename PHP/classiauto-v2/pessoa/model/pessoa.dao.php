@@ -8,6 +8,20 @@ class PessoaDAO {
         $this->pdo = $pdo;
     }
 
+    /**
+     * Método para obter todas as pessoas cadastradas
+     * no banco de dados.
+     * 
+     * Return: Lista de pessoas
+     */
+    function getAll() {
+        $sql = "SELECT * from tb_pessoa";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
     function insert($pessoa) {
         $sql = 'INSERT INTO tb_pessoa (
                 nome, email, telefone, nascimento, login, senha)

@@ -39,7 +39,13 @@ if($action == 'novo') {
         echo "Erro ao salvar pessoa";
     }
 
-} else { // Ação default
+} 
+
+if($view == 'view/list.php') {
+    // Buscar as pessoas no Banco de Dados
+    $pessoas = $pessoaDAO->getAll();
+
+    //print_r($pessoas);
 }
 
 require_once($view); // Abrindo uma view

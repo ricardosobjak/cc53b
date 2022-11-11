@@ -1,12 +1,3 @@
-<?php
-    // Estabelece a conexão (disponibiliza a var. $_conn)
-    require_once('conexao.php');
-
-    $sql = "SELECT * FROM tb_pessoa"; // SQL de consulta
-
-    $result = $_conn->query($sql); // Faz a consulta no DB
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,19 +21,19 @@
             </tr>
         </thead>
         <tbody>
-            <?php while($pessoa = mysqli_fetch_array($result)): ?>
+            <?php foreach ($pessoas as $index => $pessoa): ?>
             <tr>
-                <td><?= $pessoa['id'] ?></td>
-                <td><?= $pessoa['nome'] ?></td>
-                <td><?= $pessoa['nascimento'] ?></td>
-                <td><?= $pessoa['telefone'] ?></td>
-                <td><?= $pessoa['login'] ?></td>
+                <td><?= $pessoa->id ?></td>
+                <td><?= $pessoa->nome ?></td>
+                <td><?= $pessoa->nascimento ?></td>
+                <td><?= $pessoa->telefone ?></td>
+                <td><?= $pessoa->login ?></td>
                 <td>
-                    <a href="pessoa-form.php?id=<?= $pessoa['id'] ?>">Editar</a>
-                    <a href="pessoa-delete.php?id=<?= $pessoa['id'] ?>">Remover</a>
+                    <a href="pessoa-form.php?id=<?= $pessoa->id ?>">Editar</a>
+                    <a href="pessoa-delete.php?id=<?= $pessoa->id ?>">Remover</a>
                 </td>
             </tr>
-            <?php endwhile; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 
