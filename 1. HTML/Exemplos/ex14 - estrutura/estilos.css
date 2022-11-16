@@ -1,0 +1,12 @@
+div#header,
+div#footer {
+    margin: 0 auto;
+    width: 100%;
+    min-height: 70px;
+    border: solid #c0c0c0 1px;
+}
+
+a {
+    font-family: arial;
+    font-size: 14px;
+}

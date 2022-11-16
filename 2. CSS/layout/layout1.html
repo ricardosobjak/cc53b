@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      nav {
+        width: 100%;
+        background-color: #362f2d;
+        color: #fff;
+        height: 50px;
+        position: fixed;
+        margin-top: 0;
+        z-index: 2;
+        box-sizing: border-box;
+      }
+
+      section {
+        width: 900px;
+        margin: 0 auto;
+        clear: both;
+        position: relative;
+        top: 50px;
+      }
+
+      section {
+        box-sizing: border-box;
+      }
+
+      section > article#a {
+        width: 550px;
+        height: 300px;
+        background-color: green;
+        float: left;
+      }
+
+      section > article#b {
+        width: 350px;
+        height: 300px;
+        background-color: lime;
+        float: left;
+      }
+
+      section > article#c {
+        width: 320px;
+        height: 200px;
+        background-color: chocolate;
+        float: left;
+      }
+
+      section > article#d {
+        width: 580px;
+        height: 200px;
+        background-color: #ffff00;
+
+        float: left;
+      }
+
+      footer {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        background-color: darkorange;
+        float: left;
+        box-sizing: border-box;
+      }
+
+      @media only screen and (max-width: 768px) {
+        section {
+          width: 100%;
+        }
+        section > article {
+          margin-bottom: 5px;
+          width: 100% !important;
+          clear: both;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>ESTE MENU DEVE SER FIXO (AO ROLAR A PÁGINA ELE DEVE PERMANECER NO LUGAR)</nav>
+
+    <section>
+      <article id="a">ARTICLE A</article>
+      <article id="b">ARTICLE B</article>
+      <article id="c">ARTICLE C</article>
+      <article id="d">ARTICLE D</article>
+      <footer>RODAPÉ</footer>
+    </section>
+  </body>
+</html>

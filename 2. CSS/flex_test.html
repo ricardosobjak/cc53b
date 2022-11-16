@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Display: flex</title>
+
+    <style>
+        .box {
+            display: flex;
+            background-color: #07cf22;
+            padding: 10px;
+        }
+
+        .box>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--
+        Ao definir o 'display: flex', o teremos o seguinte comportamento:
+        -Exibição em linha (o padrão do flex-direction é row).
+        -Alinhamento na borda inicial do eixo principal.
+        -Não há expansão no eixo principal, mas pode haver contração.
+        -Haverá expansão vertical para preencher a altura do eixo transversal.
+        -A propriedade flex-basis (en-US) estará definida como auto.
+        -A propriedade flex-wrap estará definida como nowrap.
+    -->
+    <div class="box" style="flex-direction: row;">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div>
+
+    <div class="box" style="flex-flow: row wrap;">
+        <div style=" flex: 1 1 300px ">One</div>
+        <div style=" flex: 1 1 300px ">Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+    </div>
+</body>
+
+</html>

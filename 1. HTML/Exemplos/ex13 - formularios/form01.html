@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form name="form1" action="" method="GET">
+        <button>Botão</button>
+        <input type="text">
+
+        <hr />
+
+        <fieldset>
+
+            <input list="browsers" />
+            <datalist id="browsers">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Internet Explorer">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+        </fieldset>
+
+        <select name="cidades" id="select1">
+            <optgroup label="PR">
+                <option value="1">Cascavel</option>
+                <option value="2">Curitiba</option>
+                <option value="3">Medianeira</option>
+            </optgroup>
+            <optgroup label="SC">
+                <option value="4">Chapecó</option>
+                <option value="5">Florianópolis</option>
+                <option value="6">Xanxerê</option>
+            </optgroup>
+        </select>
+
+
+        <progress value="70" max="100">70 %</progress>
+
+
+        <fieldset>
+            <label for="story">Conte-me a sua história:</label>
+            <textarea id="story" name="story" rows="5" cols="33">Meu nome é Juca...</textarea>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

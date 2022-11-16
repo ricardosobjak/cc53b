@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            background-color: #eee;
+            border: 1px solid #000;
+            width: 33.3333%;
+            float: left;
+            padding: 10px;
+        }
+
+        header {
+            background-color: rgb(255, 238, 0);
+            height: 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        header>h1 {
+            margin: auto;
+            position: absolute;
+            /* 2 */
+            top: 50%;
+            /* 3 */
+            transform: translate(0, -50%);
+
+        }
+
+
+
+
+        @media only screen and (max-width: 768px) {
+            div {
+                margin-bottom: 5px;
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            body {
+                margin: 0;
+            }
+
+            header {
+                height: 40px;
+            }
+
+            heaher>h1 {
+                position: relative;
+                visibility: ;
+            }
+
+            div {
+                border: none;
+                width: 100%;
+            }
+
+            div:last-child {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>UTFPR</h1>
+    </header>
+
+
+    <div>MENU</div>
+    <div>CONTEÚDO</div>
+    <div>PROPAGANDA</div>
+
+</body>
+
+</html>

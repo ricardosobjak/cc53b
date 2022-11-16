@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<title>jQuery - Exemplo 1</title>
+</head>
+
+<body>
+	<h1 class="jumbotron display-4">JQuery: Exemplos</h1>
+
+	<div class="container">
+		<h2 class="align-items-center p-3 text-white-50 rounded shadow-sm bg-dark">Exemplo: GET</h2>
+		<p class="lead text-muted">Obter conteúdo de elementos HTML</p>
+
+		<p id="elemento"><b>UTFPR</b> Câmpus Medianeira</p>
+		<p>
+			Nome: <input type="text" id="nome" value="Juca" />
+		</p>
+
+		<button id="btnget1" class="btn btn-sm btn-primary">Mostrar Texto</button>
+		<button id="btnget2" class="btn btn-sm btn-primary">Mostrar HTML</button>
+		<button id="btnget3" class="btn btn-sm btn-primary">Mostrar Value (nome)</button>
+
+		<hr />
+
+		<div>
+			<h2 class="align-items-center p-3 mt-5 text-white-50 rounded shadow-sm bg-dark">Exemplo: SET</h2>
+
+			<p id="texto1">-</p>
+			<p id="texto2">-</p>
+
+			<p>Nome: <input type="text" id="texto3" value=""></p>
+
+			<button id="btnset1" class="btn btn-sm btn-primary">Setar um texto</button>
+			<button id="btnset2" class="btn btn-sm btn-primary">Setar um HTML</button>
+			<button id="btnset3" class="btn btn-sm btn-primary">Setar um valor no input</button>
+		</div>
+
+		<hr />
+
+		<div>
+			<h2 class="align-items-center p-3 text-white-50 rounded shadow-sm bg-dark mt-5">Exemplo: Append e
+				Prepend
+			</h2>
+			<p class="lead text-muted">
+			<ul>
+				<li>Append: Adicionar um elemento no final de outro</li>
+				<li>Prepend: Adicionar um elemento no início de outro</li>
+			</ul>
+			</p>
+
+			<p>Fruta: <input type="text" id="fruta" value="">
+				<button id="btnappend" class="btn btn-sm btn-primary">Append</button>
+				<button id="btnprepend" class="btn btn-sm btn-primary">Prepend</button>
+			</p>
+
+			<p id="pFruta">Banana</p>
+
+			<ol id="olFruta">
+				<li>Banana</li>
+			</ol>
+		</div>
+		<hr />
+
+		<div>
+			<h2 class="align-items-center p-3 text-white-50 rounded shadow-sm bg-dark mt-5">Exemplo: Before e After
+			</h2>
+			<p class="lead text-muted">
+			<ul>
+				<li>Before: Adicionar um elemento antes de outro</li>
+				<li>After: Adicionar um elemento depois de outro</li>
+			</ul>
+			</p>
+
+			<p>
+				<button id="btnbefore" class="btn btn-sm btn-primary">Adicionar antes de Medianeira</button>
+				<button id="btnafter" class="btn btn-sm btn-primary">Adicionar depois de Medianeira</button>
+			</p>
+
+			<ol>
+				<li id="med">Medianeira</li>
+			</ol>
+		</div>
+
+
+		<hr />
+
+		<div>
+			<h2 class="align-items-center p-3 text-white-50 rounded shadow-sm bg-dark mt-5">Exemplo: Remove</h2>
+			<p class="lead text-muted">Remove um elemento HTML</p>
+
+			<p>
+				<button id="btnremove" class="btn btn-sm btn-danger">Remover alerta</button>
+			</p>
+
+			<div id="divRemove" class="alert alert-danger">Este componente será removido</div>
+		</div>
+
+		<hr />
+
+		<div>
+			<h2 class="align-items-center p-3 text-white-50 rounded shadow-sm bg-dark mt-5">Exemplo: Classes</h2>
+			<p class="lead text-muted">Interagindo com classes CSS</p>
+
+			<p>
+				<button id="btndanger" class="btn btn-sm btn-danger">Danger</button>
+				<button id="btnwarning" class="btn btn-sm btn-warning">Warning</button>
+				<button id="btninfo" class="btn btn-sm btn-info">Info</button>
+				<button id="btnsuccess" class="btn btn-sm btn-success">Success</button>
+			</p>
+
+			<div id="divAlert">A classe do elemento será alterada</div>
+		</div>
+	</div>
+</body>
+
+</html>
+
+
+<script src="script.js" lang="javascript"></script>

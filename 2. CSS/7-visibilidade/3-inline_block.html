@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div.exemploBlock {
+            text-align: center;
+        }
+
+        div.exemploBlock>div {
+            border: 1px solid #000;
+            margin: 2px;
+        }
+
+        .divInline {
+            display: inline;
+        }
+
+        .imgblock {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Imagens na visibilidade original (inline)</h2>
+    <div style="text-align:center">
+        <img src="http://lorempixel.com.br/100/100">
+        <img src="http://lorempixel.com.br/100/100">
+        <img src="http://lorempixel.com.br/100/100">
+    </div>
+
+    <h2>Imagens mostradas como blocos</h2>
+    <div style="text-align:center">
+        <img class="imgblock" src="http://lorempixel.com.br/100/100">
+        <img class="imgblock" src="http://lorempixel.com.br/100/100">
+        <img class="imgblock" src="http://lorempixel.com.br/100/100">
+    </div>
+
+    <h2>DIVs na visibilidade original (block)</h2>
+    <div class="exemploBlock">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+        <div>DIV 3</div>
+    </div>
+
+    <h2>DIVs na visibilidade inline</h2>
+    <div class="exemploBlock">
+        <div class="divInline">DIV 1</div>
+        <div class="divInline">DIV 2</div>
+        <div class="divInline">DIV 3</div>
+    </div>
+</body>
+
+</html>

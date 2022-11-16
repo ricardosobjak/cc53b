@@ -1,0 +1,102 @@
+<style>
+    .box {
+        display: flex;
+        background-color: #07cf22;
+        padding: 10px;
+    }
+
+    .box>div {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        width: 100px;
+    }
+
+    .one {
+        /*flex: 2 1 auto;*/
+        flex-grow: 3;
+        flex-basis: auto;
+    }
+
+    .two {
+        flex-grow: 0;
+        flex-basis: auto;
+    }
+
+    .three {
+        flex-grow: 0;
+        flex-basis: auto;
+    }
+</style>
+
+
+<h2>Propriedades flex-grow, flex-shrink e flex-basis</h2>
+<div class="box">
+    <div class="one">One</div>
+    <div class="two">Two</div>
+    <div class="three">Three</div>
+</div>
+
+<hr>
+<p>flex: auto => flex: 1 1 auto</p>
+<div class="box">
+    <div style="flex: auto">One</div>
+    <div style="flex: auto">Two</div>
+    <div style="flex: auto">Three</div>
+</div>
+
+<hr>
+<p>flex: initial => flex: 0 1 auto</p>
+<div class="box">
+    <div style="flex: initial">One</div>
+    <div style="flex: initial">Two</div>
+    <div style="flex: initial">Three</div>
+</div>
+
+<hr>
+<p>flex: none => flex: 0 0 auto (Tamanho do container definido como 100px)</p>
+<div class="box">
+    <div style="flex: none">One</div>
+    <div style="flex: none">Two</div>
+    <div style="flex: none">Three</div>
+</div>
+
+
+<hr>
+<h2>Propriedades flex-grow, flex-shrink e flex-basis</h2>
+<p>Tamanho do container definido como 300px (não pode crescer, nem diminuir). Equivalente a 'flex: none'</p>
+<div class="box">
+    <div style="flex: 0 0 300px;">One</div>
+    <div style="flex: 0 0 300px;">Two</div>
+    <div style="flex: 0 0 300px;">Three</div>
+</div>
+
+
+<hr>
+
+align-items: stretch, flex-start, flex-end, center.
+<div class="box" style="flex-direction: column; align-items: center">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div>
+
+<hr>
+
+justify-content: stretch, flex-start, flex-end, center, space-around, space-between
+<div class="box" style="justify-content: center">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div>
+
+<hr>
+
+Centralizando elementos no container
+<div class="box" style="height: 300px; align-items: center; justify-content: center">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div>

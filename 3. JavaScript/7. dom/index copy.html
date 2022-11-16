@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Object Model - DOM</title>
+
+  <style>
+    * {
+      border: 1px solid #000;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body id="body">
+  <h1>JavaScript - Interagindo com o DOM</h1>
+
+  <div id="div1">
+    Texto inicial
+    <span>Span</span>
+    <img alt="Imagem" />
+    <p>Parágrafo</p>
+    Texto final
+  </div>
+
+  <div id="div2">Div 2</div>
+</body>
+
+</html>
+
+<script lang="javascript">
+
+  // Obtendo todas as divs
+  var divs = document.getElementsByTagName('div');
+  console.log("Todas as divs", divs);
+
+  // Número de elementos filhos
+  console.log(divs[0].childElementCount)
+
+  // Todos os elementos filhos
+  console.log(divs[0].childNodes)
+
+  // Todos os elementos filhos
+  console.log(divs[0].children)
+
+  // Primeiro Elemento filho
+  console.log(divs[0].firstElementChild)
+
+  // Último elemento filho
+  console.log(divs[0].lastElementChild)
+
+  // Primeiro nó filho
+  console.log(divs[0].firstChild)
+
+  // Último nó filho
+  console.log(divs[0].lastChild)
+
+  // Próximo elemento irmão
+  console.log('Próximo elemento irmão', divs[0].nextElementSibling)
+
+  // Próximo nó irmão
+  console.log('Próximo nó irmão', divs[0].nextSibling)
+
+  // Nó pai
+  console.log('Nó pai', divs[0].parentNode)
+
+  // Elemento pai
+  console.log('Elemento pai', divs[0].parentElement)
+
+  console.log('Elemento pai', divs[0].ancestors)
+</script>

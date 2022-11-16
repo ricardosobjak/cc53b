@@ -1,0 +1,232 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Zen+Loop');
+
+body {
+	font-family: 'Open Sans',serif;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	color: #000000;
+}
+
+header,
+footer {
+		padding: 1em;
+		clear: left;
+}
+
+header {
+	background: #eee; 
+	min-height: 60px;
+	position: relative;
+}
+
+
+header h1 {
+	display: inline;
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+
+footer {
+	width: 100%;
+	padding: 10px 0;
+	background: #6e0ad6;
+	color: white;
+	text-align: center;
+	clear: both;
+	min-height: 10vh;
+}
+
+
+nav.principal {
+	float: left;
+	width: 160px;
+	margin: 10px;
+}
+
+
+nav.principal ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #f1f1f1;
+}
+
+nav.principal li a, div.titulo {
+	display: block;
+	color: #000;
+	padding: 8px 0 8px 16px;
+	text-decoration: none;
+}
+
+nav.principal div.titulo {
+	font-weight: 600;
+	background-color: #6e0ad6;
+	color: white;
+}
+
+nav.principal li a.active {
+	background-color: #E65328;
+	color: white;
+}
+
+nav.principal li a:hover:not(.active) {
+	background-color: #E65328;
+	color: white;
+}
+
+
+header nav {
+	right: 0;
+	position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%) 
+}
+
+header nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav li {
+	float: left;
+}
+
+header nav li a {
+	display: inline-block;
+	color: #000;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+header nav li a.active {
+	background-color: #E65328;
+	color: white;
+}
+
+header nav li a:hover:not(.active) {
+	background-color: #E65328;
+	color: white;
+}
+
+
+
+main {
+	margin-left: 190px;
+	padding: 1em;
+	overflow: hidden;
+	min-height: 80vh;
+}	
+
+aside {
+	float: right;
+	width: 200px;
+	padding: 10px;
+	min-height: 400px;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 2em;
+	padding: 30px 0;
+	margin: 0;
+}
+
+
+
+/* Formulários */
+label {
+	display: block;
+}
+
+input, select, textarea, button {
+	width: 100%;
+	padding: 8px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+}
+
+.btn {
+	border: none;
+	color: white;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.primario {
+	background-color: #6e0ad6;
+}
+
+.primario:hover {
+	background-color: #834cbe;
+	color: white;	
+}
+
+.secundario {
+	background-color: #E65328;
+}
+
+.secundario:hover {
+	background-color: #e27c5d;
+}
+
+.bnt-action {
+	width: inherit;
+	display: inherit;
+	padding: auto;
+	margin: auto;
+}
+
+
+/* Login */
+div.login {
+	width: auto;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+
+/* LISTA */
+span.destaque, span.marca, span.contato {
+	display: block;
+}
+
+span.destaque {
+	font-weight: bold;
+}
+
+
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,
+td {
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #E65328;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+
+
+.col {
+	float: left;
+	border: 2px solid #eee;
+	border-radius: 10px;
+	margin: 5px;
+	padding: 10px;
+}
