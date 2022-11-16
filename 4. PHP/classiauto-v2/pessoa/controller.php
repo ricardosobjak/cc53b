@@ -14,31 +14,47 @@ $view = 'view/list.php'; // View default
 if($action == 'novo') {
     $view = 'view/form.php';
 } else if($action == 'editar') {
-    $view = 'view/form.php';
-/*
     if(@$_REQUEST['id']) {
-        
-
-        $sql = "SELECT * FROM tb_pessoa 
-            WHERE id = " . $_REQUEST['id'];
-        
-        $result = $_conn->query($sql);
-
-        $pessoa;
-        if(mysqli_num_rows($result) > 0)
-            $pessoa = mysqli_fetch_array($result);
-    }  */
-
-} else if($action == 'deletar') {
-
-} else if($action == 'salvar') {
-    
-    if(!$pessoaDAO->insert($_POST)) {
         $view = 'view/form.php';
-
-        echo "Erro ao salvar pessoa";
+        $pessoa = $pessoaDAO->getById($_REQUEST['id']);
+    } else {
+        $message = "A pessoa não está cadastrada";
     }
 
+} else if($action == 'deletar') {
+    $id = @$_REQUEST['id'];
+
+    if($id) {
+        if($pessoaDAO->delete($id) > 0)
+            $message = "Pessoa deletada com sucesso.";
+        else
+            $message = "Nenhuma pessoa foi deletada.";
+    } else 
+        $message = "Informe o código da pessoa para deletar.";
+    
+
+} else if($action == 'salvar') {
+    try {
+        $res;
+        if( !@$_REQUEST['id']) // Insert
+            $res = $pessoaDAO->insert($_POST);
+        else // Update
+            $res = $pessoaDAO->update($_POST);
+            
+        if(!$res) {
+            $view = 'view/form.php';
+            
+            $message = "Erro ao salvar pessoa";
+        } else
+            $message = "Salvo com sucesso";
+
+    } catch (\Throwable $th) {
+        //throw $th;
+        $view = 'view/form.php';
+        $message = "Falha ao salvar pessoa. Detalhes do erro: " . $th->getMessage(); 
+    }
+
+    
 } 
 
 if($view == 'view/list.php') {

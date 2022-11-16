@@ -39,7 +39,7 @@
                 <td><?= $pessoa['login'] ?></td>
                 <td>
                     <a href="pessoa-form.php?id=<?= $pessoa['id'] ?>">Editar</a>
-                    <a href="pessoa-del.php?id=<?= $pessoa['id'] ?>">Remover</a>
+                    <a href="pessoa-delete.php?id=<?= $pessoa['id'] ?>">Remover</a>
                 </td>
             </tr>
             <?php endwhile; ?>
