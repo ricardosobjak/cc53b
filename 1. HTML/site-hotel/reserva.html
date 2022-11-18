@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Passatempo</title>
+  </head>
+  <body>
+    <header>
+      <h1>Hotel Passatempo</h1>
+      <nav>
+        <span><a href="">O Hotel</a></span> | <span><a href="">Fale conosco</a></span>
+      </nav>
+    </header>
+
+    <hr />
+
+    <nav>
+      <ul>
+        <li><a href="">Reserva</a></li>
+        <li><a href="">Acomodações</a></li>
+        <li><a href="">Comodidades</a></li>
+        <li><a href="">Ofertas</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>Reserva online</h2>
+
+      <form>
+        <fieldset>
+          <legend>Responsável</legend>
+
+          <label for="nome">Nome</label>
+          <input id="nome" type="text" placeholder="Fulano de Tal" />
+
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="fulano@provedor.com" />
+
+          <label for="telefone">Telefone</label>
+          <input id="telefone" type="telefone" placeholder="(xx) xxxxx-xxxx" />
+        </fieldset>
+        <fieldset>
+          <legend>Dados da reserva</legend>
+
+          <label for="data_entrada">Data de entrada</label>
+          <input id="data_entrada" type="date" placeholder="dd/mm/yyyy" />
+
+          <label for="data_saida">Data de saída</label>
+          <input id="data_saida" type="date" placeholder="dd/mm/yyyy" />
+
+          <label for="adultos">Adultos</label>
+          <input id="adultos" type="number" min="1" max="4" step="1" value="1" />
+
+          <label for="criancas">Crianças</label>
+          <input id="criancas" type="number" min="0" max="4" step="1" value="0" />
+
+          <label for="acomodacao">Acomodação</label>
+          <select id="acomodacao">
+            <option>Standard</option>
+            <option>Luxo</option>
+          </select>
+        </fieldset>
+        <button>Reservar</button>
+      </form>
+    </main>
+
+    <hr />
+
+    <footer>
+      Hotel Passatempo - 2021
+      <address>Av. João de Barro, 123 - Medianeira - PR</address>
+      <div><img src="images/whatsapp-icon.png" /> (45) 99999-9999</div>
+      <div><img src="images/email-icon.png" /> contato@hotelpassatempo.com.br</div>
+    </footer>
+  </body>
+</html>
