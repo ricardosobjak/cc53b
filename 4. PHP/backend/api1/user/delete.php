@@ -1,4 +1,5 @@
 <?php
+include("../enable-cors.php");
 require_once("../db/connection.inc.php");
 
 $id = @$_REQUEST['id'];
