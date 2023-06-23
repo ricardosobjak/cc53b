@@ -1,0 +1,12 @@
+### cliente de autenticação
+@URL=http://localhost/Ecommerce/api/auth
+
+### Recurso de autentificação
+
+POST {{URL}}/auth.php
+
+{
+    "email": "Usuario1@gmail.com",
+    "senha": "1234"
+}
+

@@ -2,6 +2,8 @@
 
 class UserDAO
 {
+    private $pdo;
+    
     function __construct($pdo)
     {
         $this->pdo = $pdo;
@@ -12,6 +14,17 @@ class UserDAO
         //Prepare our select statement.
         $stmt = $this->pdo->prepare("SELECT * FROM tb_usuario WHERE id = ?");
         $stmt->bindParam(1, $_REQUEST['id']);
+
+        $stmt->execute();
+        return $stmt->fetchObject();
+    }
+
+    public function getByEmailAndSenha($email, $senha)
+    {
+        //Prepare our select statement.
+        $stmt = $this->pdo->prepare("SELECT id, nome, nascimento, email, admin FROM tb_usuario WHERE email = ? AND senha = ? LIMIT 1");
+        $stmt->bindParam(1, $email);
+        $stmt->bindParam(2, $senha);
 
         $stmt->execute();
         return $stmt->fetchObject();
@@ -49,7 +62,6 @@ class UserDAO
             SET
                 nome = :nome,
                 nascimento = :nascimento,
-                telefone = :telefone,
                 email = :email
             WHERE
                 id = :id");
@@ -58,7 +70,6 @@ class UserDAO
             'id' => $id,
             'nome' => $user->nome,
             'nascimento' => $user->nascimento,
-            'telefone' => $user->telefone,
             'email' => $user->email,
         ];
 

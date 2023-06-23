@@ -1,0 +1,61 @@
+@URL=http://localhost/cc53b/5.FrontBack/webapp/api
+@JWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJub21lIjoiSnVjYSBkYSBTaWx2YSIsImVtYWlsIjoianVjYUBnbWFpbC5jb20iLCJhZG1pbiI6IjAifQ.demzZ2YmresArMz8wWJIPkI8MyiwA4r8hyjKvcQZTCE
+#JWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJub21lIjoiQW5hIE1hcmlhIiwiZW1haWwiOiJhbmFAZ21haWwuY29tIiwiYWRtaW4iOiIxIn0.21Tv4I4cqU8ykZZA_37V90vom7PoRBDvRClCYkWY3Tc
+
+
+### -----------------------------------------
+### Criar um produto
+POST {{URL}}/produto/create.php
+Content-Type: application/json
+
+{
+    "nome":"Televisor LG 50",
+    "descricao":"Televisor LED...",
+    "categoria_id": 1,
+    "imagem": null,
+    "preco": 3000,
+    "quantidade": 20
+}
+### -----------------------------------------
+
+
+
+### -----------------------------------------
+### Atualizar um produto
+POST {{URL}}/produto/update.php?id=1
+Content-Type: application/json
+Authorization: {{JWT}}
+
+{
+    "nome":"Televisor LG 55",
+    "descricao":"Televisor LED de 55''...",
+    "categoria_id": 2,
+    "imagem": "prod.jpg",
+    "preco": 3500,
+    "quantidade": 40
+}
+### -----------------------------------------
+
+
+
+### -----------------------------------------
+### Obter todos os produtos
+GET {{URL}}/produto/get.php
+Authorization: {{JWT}}
+### -----------------------------------------
+
+
+
+### -----------------------------------------
+### Obter um produto pelo ID
+GET {{URL}}/produto/get.php?id=2
+Authorization: {{JWT}}
+### -----------------------------------------
+
+
+
+### -----------------------------------------
+### Deletar um produto
+GET {{URL}}/produto/delete.php?id=2
+Authorization: {{JWT}}
+### -----------------------------------------

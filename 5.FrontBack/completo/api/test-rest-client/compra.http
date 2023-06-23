@@ -1,0 +1,66 @@
+@URL=http://localhost/Ecommerce/api
+
+@JWTUSER=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjMsImVtYWlsIjoib3N2YWxkb25ldG9AZ21haWwuY29tIiwiYWRtaW4iOjB9.jQPemERbiI4SDclw78ghCkrQyQ2fLeK4JU6H8CDFgFY
+@JWTADMIN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImVtYWlsIjoiSGVsb0BnbWFpbC5jb20iLCJhZG1pbiI6MX0.6qkdBGnmXigqg5_mTA9zv3b5Ei0swG_8esFlt8B_UD8
+
+
+### OBTER TODAS AS compras
+
+GET {{URL}}/compra/get.php
+Authorization: {{JWTADMIN}}
+//Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoiVXN1YXJpbzFAZ21haWwuY29tIiwiYWRtaW4iOjF9.-eMUhRBtIJ1q5qLP79WzlLDOxK2vB_ClIHq3C2tCmeY
+//Usuario1
+
+### ATUALIZAR compra
+POST {{URL}}/compra/update.php?id=54
+Content-Type: application/json
+Authorization: {{JWTADMIN}}
+//Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoiVXN1YXJpbzFAZ21haWwuY29tIiwiYWRtaW4iOjF9.-eMUhRBtIJ1q5qLP79WzlLDOxK2vB_ClIHq3C2tCmeY
+//Usuario 1
+
+{
+  "valor": 4000,
+  "datas": "2023-06-16",
+  "id_usuario": 44,
+   "itens": [
+    {
+      "produto_id": 21,
+      "quantidade": 1
+    },
+    {
+      "produto_id": 22,
+      "quantidade": 2
+    }
+  ]
+
+}
+
+### CRIAR UM compra
+POST {{URL}}/compra/create.php
+Content-Type: application/json
+Authorization: {{JWTADMIN}}
+//Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoiVXN1YXJpbzFAZ21haWwuY29tIiwiYWRtaW4iOjF9.-eMUhRBtIJ1q5qLP79WzlLDOxK2vB_ClIHq3C2tCmeY
+//Usuario1
+
+{
+  "valor": 220,
+  "datas": "2023-06-17",
+  "id_usuario": 44,
+   "itens": [
+    {
+      "produto_id": 22,
+      "quantidade": 9
+    },
+    {
+      "produto_id": 28,
+      "quantidade": 7
+    }
+  ]
+
+}
+
+### DELETAR UM compra
+
+GET {{URL}}/compra/delete.php?id=52
+Authorization: {{JWTADMIN}}
+//Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoiVXN1YXJpbzFAZ21haWwuY29tIiwiYWRtaW4iOjF9.-eMUhRBtIJ1q5qLP79WzlLDOxK2vB_ClIHq3C2tCmeY

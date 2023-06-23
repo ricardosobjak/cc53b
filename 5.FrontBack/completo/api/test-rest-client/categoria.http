@@ -1,0 +1,34 @@
+@URL=http://localhost/cc53b/5.FrontBack/completo/api/
+@JWTUSER=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjMsImVtYWlsIjoib3N2YWxkb25ldG9AZ21haWwuY29tIiwiYWRtaW4iOjB9.jQPemERbiI4SDclw78ghCkrQyQ2fLeK4JU6H8CDFgFY
+@JWTADMIN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImVtYWlsIjoiSGVsb0BnbWFpbC5jb20iLCJhZG1pbiI6MX0.6qkdBGnmXigqg5_mTA9zv3b5Ei0swG_8esFlt8B_UD8
+
+### OBTER TODAS AS categoriaS
+
+GET {{URL}}/categoria/get.php
+
+### ATUALIZAR categoria
+POST {{URL}}/categoria/update.php?id=25
+Content-Type: application/json
+Authorization:  {{JWTADMIN}}
+//Authorization: {{JWTUSER}}
+    
+{
+  "nome": "Cumbuca"
+}
+
+### CRIAR UMA categoria
+POST {{URL}}/categoria/create.php/
+Content-Type: application/json
+Authorization: {{JWTADMIN}}
+//Authorization: {{JWTUSER}}
+
+{
+  "nome": "Pratos"
+}
+
+
+### DELETAR UM categoria
+
+GET {{URL}}/categoria/delete.php?id=24
+Authorization: {{JWTADMIN}}
+//Authorization: {{JWTUSER}}

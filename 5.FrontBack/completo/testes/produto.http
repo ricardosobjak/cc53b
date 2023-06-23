@@ -1,0 +1,14 @@
+### PRODUTOS
+
+@URL=http://localhost/Ecommerce/auth
+
+### Cadastrar produto
+
+POST {{URL}}/produto/create.php
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiJ9.tWh7fFCplZSzijD4JnTH2I_WpQpNOF2ZwSHgs-2hlBs
+
+{
+    "descricao": "berinbau",
+}
+
+

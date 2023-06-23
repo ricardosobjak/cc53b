@@ -1,0 +1,49 @@
+@URL=http://localhost/cc53b/5.FrontBack/webapp/api
+@JWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJub21lIjoiSnVjYSBkYSBTaWx2YSIsImVtYWlsIjoianVjYUBnbWFpbC5jb20iLCJhZG1pbiI6IjAifQ.demzZ2YmresArMz8wWJIPkI8MyiwA4r8hyjKvcQZTCE
+@JWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJub21lIjoiQW5hIE1hcmlhIiwiZW1haWwiOiJhbmFAZ21haWwuY29tIiwiYWRtaW4iOiIxIn0.21Tv4I4cqU8ykZZA_37V90vom7PoRBDvRClCYkWY3Tc
+
+### -----------------------------------
+### Obter todas as categorias
+GET {{URL}}/categoria/get.php
+### -----------------------------------
+
+
+### -----------------------------------
+### Obter uma categoria pelo ID
+GET {{URL}}/categoria/get.php?id=1
+### -----------------------------------
+
+
+
+### -----------------------------------
+### Criar uma categoria
+POST {{URL}}/categoria/create.php
+Content-Type: application/json
+Authorization: {{JWT}}
+
+{
+  "nome": "Eletrônicos"
+}
+### -----------------------------------
+
+
+
+### Atualizar uma categoria
+POST {{URL}}/categoria/update.php?id=1
+Content-Type: application/json
+Authorization: {{JWT}}
+
+{
+  "nome": "AAA"
+}
+### -----------------------------------
+
+
+
+
+### -----------------------------------
+### Deletar uma categoria
+GET {{URL}}/categoria/delete.php?id=4
+Authorization: {{JWT}}
+
+### -----------------------------------

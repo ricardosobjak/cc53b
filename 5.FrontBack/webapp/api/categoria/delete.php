@@ -1,13 +1,12 @@
 <?php
-include_once "../enable-cors.php";
-include_once "../validate-jwt.inc.php";
-include_once "../validate-admin-or-user.inc.php";
-validarUsuario($_REQUEST["id"]);
+include("../enable-cors.php");
+include("../validate-jwt.inc.php");
+include("../validate-admin.inc.php");
 
-require_once "../db/connection.inc.php";
-require_once "user.dao.php";
+require_once("../db/connection.inc.php");
+require_once("categoria.dao.php");
 
-$userDAO = new UserDAO($pdo);
+$categoriaDAO = new CategoriaDAO($pdo);
 
 $id = @$_REQUEST['id'];
 
@@ -18,10 +17,10 @@ if (!$id) {
     $responseBody = '{ "message": "ID não informado" }';
 } else {
     try {
-        if ($userDAO->delete($id) != 1) {
+        if ($categoriaDAO->delete($id) != 1) {
             // Muda o código de resposta HTTP para 'not found'
             http_response_code(404);
-            $responseBody = '{ "message": "Usuário não encontrado" }';
+            $responseBody = '{ "message": "Categoria não encontrada" }';
         }
     } catch (Exception $e) {
         // Muda o código de resposta HTTP para 'bad request'
@@ -34,4 +33,4 @@ if (!$id) {
 header('Content-Type: application/json');
 
 // Exibe a resposta
-print_r($responseBody);
+print($responseBody);
