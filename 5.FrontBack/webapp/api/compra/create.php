@@ -1,25 +1,35 @@
 <?php
 include_once "../enable-cors.php";
-include("../validate-jwt.inc.php");
-include("../validate-admin.inc.php");
+include_once "../validate-jwt.inc.php";
+
 
 require_once "../db/connection.inc.php";
-require_once "produto.dao.php";
+require_once "compra.dao.php";
+require_once "itemcompra.dao.php";
 
-$produtoDAO = new ProdutoDAO($pdo);
+
+$compraDAO = new CompraDAO($pdo);
+$itemCompraDAO = new ItemCompraDAO($pdo);
 
 // Obter o corpo da requisição
 $json = file_get_contents('php://input');
 
 // Transforma o JSON em um Objeto PHP
-$produto = json_decode($json);
+$compra = json_decode($json);
 
 $responseBody = '';
 
 try {
-    $produto = $produtoDAO->insert($produto);
+    $compra->data_compra = date('Y-m-d'); // Seta a data de compra a partir do sistema
+    $compra->usuario_id = $userAuth["id"]; // Obtém o ID do usuário autenticado.
+    $compra = $compraDAO->insert($compra);
 
-    $responseBody = json_encode($produto);
+    foreach($compra->itens as $item) {
+        $item->compra_id = $compra->id;
+        $itemCompraDAO->insert($item);
+    }
+
+    $responseBody = json_encode($compra);
 } catch (Exception $e) {
     // Muda o código de resposta HTTP para 'bad request'
     http_response_code(400);

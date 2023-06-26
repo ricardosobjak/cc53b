@@ -5,7 +5,7 @@
 POST {{URL}}/auth/auth.php
 
 {
-    "username": "ana@gmail.com",
+    "username": "jucaoliveira@gmail.com",
     "password": "1234"
 }
 

@@ -29,6 +29,17 @@ class ProdutoDAO
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function getByCategoria($categoriaid)
+    {
+        //Prepare our select statement.
+        $stmt = $this->pdo->prepare("SELECT * FROM tb_produto WHERE categoria_id = ?");
+        $stmt->bindParam(1, $categoriaid);
+        $stmt->execute();
+
+        // Retorna um array de objetos
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function insert($produto)
     {
         $stmt = $this->pdo->prepare("INSERT INTO tb_produto (nome, descricao, imagem, preco, quantidade, categoria_id) VALUES (:nome, :descricao, :imagem, :preco, :quantidade, :categoria_id)");

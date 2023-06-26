@@ -1,32 +1,38 @@
 @URL=http://localhost/cc53b/5.FrontBack/webapp/api
+
 #JWT de Usuário:
 @JWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJub21lIjoiSnVjYSBkZSBPbGl2ZWlyYSIsImVtYWlsIjoianVjYW9saXZlaXJhQGdtYWlsLmNvbSIsImFkbWluIjoiMCJ9.LjMNb9AJINmj7_UsrRE7UqN8Xn8Hb0VRk68kV1YASVE
 
 ### JWT Admin
-@JWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUiLCJub21lIjoiQW5hIE1hcmlhIiwiZW1haWwiOiJhbmFAZ21haWwuY29tIiwiYWRtaW4iOiIxIn0.UqttgaMSd9FwlCjgDNnHpXc1y9eLY-21G8Z7xV9HQ9M
+#@JWT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUiLCJub21lIjoiQW5hIE1hcmlhIiwiZW1haWwiOiJhbmFAZ21haWwuY29tIiwiYWRtaW4iOiIxIn0.UqttgaMSd9FwlCjgDNnHpXc1y9eLY-21G8Z7xV9HQ9M
 
 
 ### -----------------------------------------
-### Criar um produto
-POST {{URL}}/produto/create.php
+### Criar uma compra
+POST {{URL}}/compra/create.php
 Content-Type: application/json
 Authorization: {{JWT}}
 
 {
-    "nome":"Geladeira",
-    "descricao": "Geladeira 480L",
-    "categoria_id": 1,
-    "imagem": null,
-    "preco": 3000,
-    "quantidade": 30
+    "valor": 1000,
+    "itens": [
+        { 
+            "produto_id": 1, 
+            "quantidade": 2
+        },
+        { 
+            "produto_id": 3, 
+            "quantidade": 1
+        }
+    ]
 }
 ### -----------------------------------------
 
 
 
 ### -----------------------------------------
-### Atualizar um produto
-POST {{URL}}/produto/update.php?id=1
+### Atualizar uma compra
+POST {{URL}}/compra/update.php?id=1
 Content-Type: application/json
 Authorization: {{JWT}}
 
@@ -43,27 +49,31 @@ Authorization: {{JWT}}
 
 
 ### -----------------------------------------
-### Obter todos os produtos
-GET {{URL}}/produto/get.php
+### Obter todas as compras do usuário autenticado
+GET {{URL}}/compra/get.php
+Authorization: {{JWT}}
+### -----------------------------------------
+
+
+### -----------------------------------------
+### Obter todas as compras do sistema
+###  Permissão: somente admin.
+GET {{URL}}/compra/get.php?todos=1
+Authorization: {{JWT}}
 ### -----------------------------------------
 
 
 
 ### -----------------------------------------
-### Obter todos os produtos de uma categoria
-GET {{URL}}/produto/get.php?categoria=1
-### -----------------------------------------
-
-
-### -----------------------------------------
-### Obter um produto pelo ID
-GET {{URL}}/produto/get.php?id=1
+### Obter uma compra pelo ID
+GET {{URL}}/compra/get.php?id=1
+Authorization: {{JWT}}
 ### -----------------------------------------
 
 
 
 ### -----------------------------------------
-### Deletar um produto
-GET {{URL}}/produto/delete.php?id=2
+### Deletar uma compra
+GET {{URL}}/compra/delete.php?id=9
 Authorization: {{JWT}}
 ### -----------------------------------------
