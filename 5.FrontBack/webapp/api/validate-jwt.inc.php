@@ -20,7 +20,8 @@ require_once "lib/jwtutil.class.php";
  * O token é enviado pelo cliente como o parâmetro
  * authorization.
  */
-$token = @getallheaders()['authorization'];
+$headers = array_change_key_case(@getallheaders(), CASE_LOWER);
+$token = @$headers['authorization'];
 
 $responseBody = ''; // Variável que armazena uma resposta para o cliente
 
