@@ -1,0 +1,32 @@
+// Scripts de testes da API - 
+// Instalar a extensão "Rest Client"
+
+@URL=http://localhost:3000/pessoa
+
+### Obter todas as pessoas
+GET {{URL}}
+
+### Obter 1 pessoa pelo ID
+GET {{URL}}/1
+
+### Criar pessoa
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "nome": "Juca",
+    "email": "juca@gmail.com",
+    "senha": "1234"
+}
+
+### Atualizar pessoa
+PUT {{URL}}/1
+Content-Type: application/json
+
+{
+    "nome": "Marcelo",
+    "email": "marcelo@gmail.com"
+}
+
+### Deletar pessoa
+DELETE {{URL}}/1
